@@ -19,7 +19,7 @@ Drop the component into your React project!
 
 ```js
 const customCallback = () => {
-	window.reload();
+  window.reload();
 }
 
 class App extends React.Component {
