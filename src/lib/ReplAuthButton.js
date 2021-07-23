@@ -33,6 +33,8 @@ class ReplAuthButton extends React.Component {
 			if (event.data !== 'auth_complete') return;
 			window.removeEventListener('message', this);
 			authWindow.close();
+
+			if(typeof this.props.callback === 'function') this.props.callback();
 		});
 	}
 
@@ -47,13 +49,13 @@ class ReplAuthButton extends React.Component {
 		return (
 			<React.Fragment>
 				<button
-					className={'button_' + this.props.theme}
+					className={'button_' + (this.props.theme || 'dark')}
 					onClick={this.handleClick}
 					onMouseMove={event => this.setAccentPosition(event)}
 					onMouseEnter={event => this.handleMouseEnter(event)}
 					onMouseLeave={() => this.setState({ showAccent: false })}
 				>
-					<div className={'buttonContent_' + this.props.theme}>
+					<div className={'buttonContent_' + (this.props.theme || 'dark')}>
 						<svg width="67" height="67" xmlns="http://www.w3.org/2000/svg">
 							<g fill="none" fill-rule="evenodd" />
 							<path d="M24.4168 31.9728C24.4168 31.9728 18.9576 52.0872 40.8388 52.2624C47.704 49.7064 52.7628 43.4408 53.5296 35.8868C53.5824 35.3644 53.598 34.8312 53.6096 34.2976C53.612 34.1568 53.6308 34.0204 53.6308 33.8792C53.6308 33.2708 53.5936 32.6712 53.54 32.0764C47.7592 54.834 22.1848 45.9204 24.4168 31.9728Z" fill={this.props.theme === 'dark' ? '#FFFFFF' : '#373737'} />
@@ -66,7 +68,7 @@ class ReplAuthButton extends React.Component {
 						{this.props.message ? this.props.message : 'Auth with Replit'}
 					</div>
 					<div
-						className={'accent_' + this.props.theme}
+						className={'accent_' + (this.props.theme || 'dark')}
 						style={accentStyle}
 					/>
 				</button>

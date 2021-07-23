@@ -1,5 +1,6 @@
 {
   "name": "replauth-component",
+	"version": "0.0.1",
 	"main": "./dist/common/replauth-component-common.js",
 	"module": "./dist/esm/replauth-component-esm.js",
 	"browser": "./dist/umd/replauth-component-umd.js",
