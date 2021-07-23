@@ -1,24 +1,24 @@
 {
   "name": "replauth-component",
-	"version": "0.0.1",
-	"main": "./dist/common/replauth-component-common.js",
-	"module": "./dist/esm/replauth-component-esm.js",
-	"browser": "./dist/umd/replauth-component-umd.js",
-	"exports": {
-		".": {
-			"import": "./dist/esm/replauth-component-esm.js",
-			"require": "./dist/common/replauth-component-common.js",
-			"browser": "./dist/iife/replauth-component-iife.js",
-			"default": "./dist/umd/replauth-component-umd.js"
-		}
-	},
-	"files": [
-		"dist",
-		"README.md",
-		"LICENSE"
-	],
-	"license": "MIT",
-	"author": "Ray Arayilakath <rayhanadev@protonmail.com> (https://rayhanadev.vercel.app)",
+  "version": "0.0.2",
+  "main": "./dist/common/replauth-component-common.js",
+  "module": "./dist/esm/replauth-component-esm.js",
+  "browser": "./dist/umd/replauth-component-umd.js",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/replauth-component-esm.js",
+      "require": "./dist/common/replauth-component-common.js",
+      "browser": "./dist/iife/replauth-component-iife.js",
+      "default": "./dist/umd/replauth-component-umd.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "license": "MIT",
+  "author": "Ray Arayilakath <rayhanadev@protonmail.com> (https://rayhanadev.vercel.app)",
   "scripts": {
     "start": "BROWSER=none react-scripts start",
     "build": "rm -rf dist/ && rollup --config rollup.config.js"
