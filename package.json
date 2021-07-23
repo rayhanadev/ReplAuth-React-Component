@@ -1,14 +1,14 @@
 {
   "name": "replauth-component",
-	"main": "./dist/replauth-component-umd.js",
-	"module": "./dist/replauth-component-esm.js",
-	"browser": "./dist/replauth-component-umd.js",
+	"main": "./dist/common/replauth-component-common.js",
+	"module": "./dist/esm/replauth-component-esm.js",
+	"browser": "./dist/umd/replauth-component-umd.js",
 	"exports": {
 		".": {
-			"import": "./dist/replauth-component-esm.js",
-			"require": "./dist/replauth-component-umd.js",
-			"browser": "./dist/replauth-component-umd.js",
-			"default": "./dist/replauth-component-umd.js"
+			"import": "./dist/esm/replauth-component-esm.js",
+			"require": "./dist/common/replauth-component-common.js",
+			"browser": "./dist/iife/replauth-component-iife.js",
+			"default": "./dist/umd/replauth-component-umd.js"
 		}
 	},
 	"files": [
@@ -20,7 +20,7 @@
 	"author": "Ray Arayilakath <rayhanadev@protonmail.com> (https://rayhanadev.vercel.app)",
   "scripts": {
     "start": "BROWSER=none react-scripts start",
-    "build": "rollup --config rollup.config.js"
+    "build": "rm -rf dist/ && rollup --config rollup.config.js"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",

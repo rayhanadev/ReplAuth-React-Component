@@ -10,7 +10,7 @@ module.exports = {
 	input: 'src/lib/index.js',
 	output: [
 		{
-			file: `dist/${name}-umd.js`,
+			file: `dist/umd/${name}-umd.js`,
 			format: 'umd',
 			preferConst: true,
 			sourcemap: true,
@@ -20,7 +20,23 @@ module.exports = {
 			},
 		},
 		{
-			file: `dist/${name}-esm.js`,
+			file: `dist/iife/${name}-iife.js`,
+			format: 'iife',
+			preferConst: true,
+			sourcemap: true,
+			name: 'ReplAuthButton',
+			globals: {
+				react: 'React',
+			},
+		},
+		{
+			file: `dist/common/${name}-common.js`,
+			format: 'cjs',
+			preferConst: true,
+			sourcemap: true,
+		},
+		{
+			file: `dist/esm/${name}-esm.js`,
 			format: 'esm',
 			preferConst: true,
 			sourcemap: true,
